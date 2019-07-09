@@ -1,0 +1,15 @@
+<div class="container" style="padding: 20px">
+  <div>
+    <canvas id="originalImage" width="{{ width }}" height="{{ height }}" style="border:1px solid #d3d3d3;" #originalImageCanvas> </canvas>
+  </div>
+  <div *ngFor="let filter of filters / 4"></div>
+  <div class="container-grid" style="padding: 20px">
+    <div *ngFor="let filter of filters; let i = index">
+      <div class="box" [style.background-color]="filter.getColor()" (click)="onSelectFilter($event, filter)"></div>
+    </div>
+  </div>
+
+  <div>
+    <canvas id="filterImage" width="{{ width }}" height="{{ height }}" style="border:1px solid #d3d3d3;" #filterImage> </canvas>
+  </div>
+</div>
